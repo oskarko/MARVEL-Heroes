@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CharacterCell" customModule="Marvel_Heroes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" userLabel="View">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-hZ-6rs" userLabel="ContainerView">
+                        <rect key="frame" x="16" y="8" width="288" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron" translatesAutoresizingMaskIntoConstraints="NO" id="T2q-AD-JqQ">
+                                <rect key="frame" x="262" y="24" width="10" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="nBK-SA-eg7"/>
+                                    <constraint firstAttribute="width" constant="10" id="wQi-v4-lMH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UT9-so-L47">
+                                <rect key="frame" x="64" y="21.5" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-0X-9wh">
+                                <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jmb-0X-9wh" secondAttribute="height" multiplier="1:1" id="FPh-on-12f"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="MarvelGrey"/>
+                        <constraints>
+                            <constraint firstItem="Jmb-0X-9wh" firstAttribute="top" secondItem="SZI-hZ-6rs" secondAttribute="top" constant="16" id="4o0-wm-YbM"/>
+                            <constraint firstItem="UT9-so-L47" firstAttribute="leading" secondItem="Jmb-0X-9wh" secondAttribute="trailing" constant="16" id="6xO-xt-uLw"/>
+                            <constraint firstAttribute="trailing" secondItem="T2q-AD-JqQ" secondAttribute="trailing" constant="16" id="MeG-V4-RcD"/>
+                            <constraint firstItem="T2q-AD-JqQ" firstAttribute="leading" secondItem="UT9-so-L47" secondAttribute="trailing" constant="16" id="N4z-Lo-yYR"/>
+                            <constraint firstAttribute="bottom" secondItem="Jmb-0X-9wh" secondAttribute="bottom" constant="16" id="NgD-Xk-5Fl"/>
+                            <constraint firstItem="T2q-AD-JqQ" firstAttribute="centerY" secondItem="SZI-hZ-6rs" secondAttribute="centerY" id="OAO-0z-tCh"/>
+                            <constraint firstItem="Jmb-0X-9wh" firstAttribute="leading" secondItem="SZI-hZ-6rs" secondAttribute="leading" constant="16" id="xSv-lX-dcR"/>
+                            <constraint firstItem="UT9-so-L47" firstAttribute="centerY" secondItem="SZI-hZ-6rs" secondAttribute="centerY" id="yBd-DV-wQN"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="SZI-hZ-6rs" secondAttribute="trailing" constant="16" id="V88-Dp-NO1"/>
+                    <constraint firstItem="SZI-hZ-6rs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="WzI-bT-LRb"/>
+                    <constraint firstItem="SZI-hZ-6rs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="edN-JG-7ES"/>
+                    <constraint firstAttribute="bottom" secondItem="SZI-hZ-6rs" secondAttribute="bottom" constant="8" id="pnY-MD-Gx1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="MarvelBackground"/>
+            <connections>
+                <outlet property="characterImageView" destination="Jmb-0X-9wh" id="zmI-tu-R8U"/>
+                <outlet property="characterLabel" destination="UT9-so-L47" id="CgZ-Jd-hKY"/>
+                <outlet property="containerView" destination="SZI-hZ-6rs" id="qbe-kQ-IpJ"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron" width="10" height="16"/>
+        <namedColor name="MarvelBackground">
+            <color red="0.13333333333333333" green="0.14509803921568629" blue="0.16862745098039217" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MarvelGrey">
+            <color red="0.21176470588235294" green="0.23137254901960785" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
