@@ -46,6 +46,9 @@
 		E241D1C2274AA859008DE75B /* RootHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E241D1C1274AA859008DE75B /* RootHeaderView.xib */; };
 		E241D1C5274AA9B1008DE75B /* SquadMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1C3274AA9B1008DE75B /* SquadMemberCell.swift */; };
 		E241D1C6274AA9B1008DE75B /* SquadMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E241D1C4274AA9B1008DE75B /* SquadMemberCell.xib */; };
+		E241D1CA274AB588008DE75B /* RootViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1C9274AB588008DE75B /* RootViewModelTests.swift */; };
+		E241D1CD274AB6D8008DE75B /* MockRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1CC274AB6D8008DE75B /* MockRootView.swift */; };
+		E241D1CF274AB6E3008DE75B /* mockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1CE274AB6E3008DE75B /* mockNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		E241D1C1274AA859008DE75B /* RootHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootHeaderView.xib; sourceTree = "<group>"; };
 		E241D1C3274AA9B1008DE75B /* SquadMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadMemberCell.swift; sourceTree = "<group>"; };
 		E241D1C4274AA9B1008DE75B /* SquadMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadMemberCell.xib; sourceTree = "<group>"; };
+		E241D1C9274AB588008DE75B /* RootViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModelTests.swift; sourceTree = "<group>"; };
+		E241D1CC274AB6D8008DE75B /* MockRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRootView.swift; sourceTree = "<group>"; };
+		E241D1CE274AB6E3008DE75B /* mockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockNetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,7 +210,9 @@
 		E2398D5F2749666200306367 /* Marvel-HeroesTests */ = {
 			isa = PBXGroup;
 			children = (
+				E241D1CB274AB5AB008DE75B /* Mocks */,
 				E2398D602749666200306367 /* Marvel_HeroesTests.swift */,
+				E241D1C9274AB588008DE75B /* RootViewModelTests.swift */,
 			);
 			path = "Marvel-HeroesTests";
 			sourceTree = "<group>";
@@ -358,6 +366,15 @@
 				E2398D4B2749665E00306367 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		E241D1CB274AB5AB008DE75B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E241D1CC274AB6D8008DE75B /* MockRootView.swift */,
+				E241D1CE274AB6E3008DE75B /* mockNetworkService.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +653,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E241D1CF274AB6E3008DE75B /* mockNetworkService.swift in Sources */,
+				E241D1CA274AB588008DE75B /* RootViewModelTests.swift in Sources */,
+				E241D1CD274AB6D8008DE75B /* MockRootView.swift in Sources */,
 				E2398D612749666200306367 /* Marvel_HeroesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
