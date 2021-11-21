@@ -8,8 +8,13 @@
 
 import UIKit
 
-protocol DetailsViewControllerProtocol: AnyObject {
+enum CharacterStatus: Int {
+    case free
+    case hired
+}
 
+protocol DetailsViewControllerProtocol: AnyObject {
+    func updateUI(characterStatus: CharacterStatus)
 }
 
 class DetailsViewController: UIViewController {
@@ -29,6 +34,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        updateUI(characterStatus: viewModel.getCharacterStatus())
     }
     
     override func viewWillLayoutSubviews() {
@@ -38,7 +44,7 @@ class DetailsViewController: UIViewController {
     // MARK: - Selectors
 
     @IBAction func recruitButtonTapped(_ sender: UIButton) {
-        print("recruit")
+        viewModel.recruitButtonTapped()
     }
     
     // MARK: - Helpers
@@ -48,7 +54,6 @@ class DetailsViewController: UIViewController {
         
         characterNameLabel.text = viewModel.getCharacterName()
         characterHistoryLabel.text = viewModel.getCharacterHistory()
-        recruitButton.setTitle("💪  Recruit to Squad", for: .normal)
         
         if let urlString = viewModel.getCharacterImageUrlString() {
             characterImageView.sd_setImage(with: URL(string: urlString))
@@ -62,5 +67,10 @@ class DetailsViewController: UIViewController {
 // MARK: - DetailsViewControllerProtocol
 
 extension DetailsViewController: DetailsViewControllerProtocol {
-
+    func updateUI(characterStatus: CharacterStatus) {
+        recruitButton.setTitle(viewModel.getRecruitButtonTitle(), for: .normal)
+        recruitButton.backgroundColor = characterStatus == .free ? .marvelRedLight : .marvelBackground
+        recruitButton.layer.borderWidth = characterStatus == .free ? 0 : 2
+        recruitButton.layer.borderColor = characterStatus == .free ? UIColor.marvelBackground?.cgColor : UIColor.marvelRedLight?.cgColor
+    }
 }

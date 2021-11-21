@@ -33,6 +33,13 @@ class RootViewController: UIViewController {
         viewModel.fetchCharacters(offset: 0)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let Charactercount = DataBaseManager.instance.getAllCharacters().count
+        print("Character count: \(Charactercount)")
+    }
+    
 
     // MARK: - Selectors
 

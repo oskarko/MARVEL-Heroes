@@ -25,4 +25,13 @@ struct Character: Codable {
         case title
         case thumbnail
     }
+    
+    init(id: Int, digitalID: Int?, name: String?, description: String?, title: String?, thumbnail: Thumbnail?) {
+        self.id = id
+        self.digitalID = digitalID
+        self.name = name
+        self.description = description
+        self.title = title
+        self.thumbnail = thumbnail
+    }
 }

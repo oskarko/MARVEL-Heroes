@@ -22,6 +22,8 @@ class DetailsViewModel {
         self.character = character
     }
     
+    // MARK: - Helpers
+    
     func getCharacterName() -> String? {
         character.name
     }
@@ -42,6 +44,21 @@ class DetailsViewModel {
         return path + "." + fileExtension
     }
     
-    // MARK: - Helpers
+    func getRecruitButtonTitle() -> String? {
+        DataBaseManager.instance.existsCharacter(by: character.id) ? "🔥  Fire from Squad" : "💪  Recruit to Squad"
+    }
     
+    func getCharacterStatus() -> CharacterStatus {
+        DataBaseManager.instance.existsCharacter(by: character.id) ? .hired : .free
+    }
+    
+    func recruitButtonTapped() {
+        if DataBaseManager.instance.existsCharacter(by: character.id) {
+            DataBaseManager.instance.deleteCharacter(by: character.id)
+        } else {
+            DataBaseManager.instance.addCharacter(character)
+        }
+
+        view?.updateUI(characterStatus: getCharacterStatus())
+    }
 }
