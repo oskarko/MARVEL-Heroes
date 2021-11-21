@@ -17,11 +17,6 @@ class SquadMemberCell: UICollectionViewCell {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configure(with character: Character) {
         characterNameLabel.text = character.name
         characterImageView.layer.cornerRadius = characterImageView.frame.height / 2
@@ -37,5 +32,4 @@ class SquadMemberCell: UICollectionViewCell {
 
         characterImageView.sd_setImage(with: url)
     }
-
 }

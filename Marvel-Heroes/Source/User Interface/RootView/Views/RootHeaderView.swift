@@ -79,7 +79,6 @@ extension RootHeaderView: UICollectionViewDataSource, UICollectionViewDelegate, 
             return UICollectionViewCell()
         }
         cell.configure(with: characters[indexPath.row])
-        //cell.delegate = self
         
         return cell
     }

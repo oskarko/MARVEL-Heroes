@@ -193,11 +193,9 @@
 		E2398D482749665E00306367 /* Marvel-Heroes */ = {
 			isa = PBXGroup;
 			children = (
+				E241D1C8274AB457008DE75B /* App */,
+				E241D1C7274AB438008DE75B /* Resources */,
 				E2398D85274968DD00306367 /* Source */,
-				E2398D492749665E00306367 /* AppDelegate.swift */,
-				E2398D4B2749665E00306367 /* SceneDelegate.swift */,
-				E2398D522749666200306367 /* Assets.xcassets */,
-				E2398D542749666200306367 /* LaunchScreen.storyboard */,
 				E2398D572749666200306367 /* Info.plist */,
 			);
 			path = "Marvel-Heroes";
@@ -342,6 +340,24 @@
 				E241D1C1274AA859008DE75B /* RootHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E241D1C7274AB438008DE75B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2398D522749666200306367 /* Assets.xcassets */,
+				E2398D542749666200306367 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E241D1C8274AB457008DE75B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E2398D492749665E00306367 /* AppDelegate.swift */,
+				E2398D4B2749665E00306367 /* SceneDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
