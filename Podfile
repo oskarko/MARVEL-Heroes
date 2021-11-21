@@ -7,6 +7,7 @@ target 'Marvel-Heroes' do
 
   # Pods for Marvel-Heroes
   pod 'SDWebImage'
+  pod 'SQLite.swift'
 
   target 'Marvel-HeroesTests' do
     inherit! :search_paths

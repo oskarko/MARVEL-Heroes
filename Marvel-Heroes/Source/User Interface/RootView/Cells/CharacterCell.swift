@@ -30,8 +30,6 @@ class CharacterCell: UITableViewCell {
     }
     
     func configure(with character: Character) {
-        containerView.layer.cornerRadius = 10
-        characterImageView.layer.cornerRadius = characterImageView.layer.bounds.height / 2
         characterLabel.text = character.name
         
         guard let path = character.thumbnail?.path,

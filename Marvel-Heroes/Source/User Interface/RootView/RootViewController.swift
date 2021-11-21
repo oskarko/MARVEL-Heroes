@@ -17,6 +17,8 @@ class RootViewController: UIViewController {
     
     // MARK: - Properties
     
+    static let cellHeight: CGFloat = 88
+    
     var viewModel: RootViewModel!
     
     @IBOutlet weak var tableView: UITableView!
@@ -44,7 +46,12 @@ class RootViewController: UIViewController {
     }
     
     private func configureUI() {
-
+        navigationController?.navigationBar.barStyle = .black
+        
+        let imageView = UIImageView(image: UIImage(named: LOGO_NAME))
+        imageView.contentMode = .scaleAspectFit
+        imageView.setDimensions(width: LOGO_WIDTH, height: LOGO_HEIGHT)
+        navigationItem.titleView = imageView
     }
     
 }
@@ -80,17 +87,19 @@ extension RootViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         cell.configure(with: viewModel.cellModel(at: indexPath.row))
+        cell.selectionStyle = .none
         //cell.delegate = self
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        88
+        Self.cellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        viewModel.didSelectRow(at: indexPath)
     }
 
 }

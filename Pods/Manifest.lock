@@ -2,17 +2,23 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - SDWebImage
+  - SQLite.swift
 
 SPEC REPOS:
   trunk:
     - SDWebImage
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 9b705ad6474b1b575b7c1bd83b773175e2a94323
+PODFILE CHECKSUM: c90df287c77cc201c535e9c308cc75bcc625c54f
 
 COCOAPODS: 1.11.2

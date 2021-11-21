@@ -33,6 +33,11 @@
 		E2398DB2274971BE00306367 /* MarvelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DB1274971BE00306367 /* MarvelData.swift */; };
 		E2398DB62749735700306367 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DB42749735700306367 /* CharacterCell.swift */; };
 		E2398DB72749735700306367 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2398DB52749735700306367 /* CharacterCell.xib */; };
+		E2398DBD2749860F00306367 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DB92749860F00306367 /* DetailsRouter.swift */; };
+		E2398DBE2749860F00306367 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DBA2749860F00306367 /* DetailsViewController.swift */; };
+		E2398DBF2749860F00306367 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DBB2749860F00306367 /* DetailsViewModel.swift */; };
+		E2398DC02749860F00306367 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2398DBC2749860F00306367 /* DetailsViewController.xib */; };
+		E2398DC227498A1F00306367 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DC127498A1F00306367 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		E2398DB1274971BE00306367 /* MarvelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelData.swift; sourceTree = "<group>"; };
 		E2398DB42749735700306367 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		E2398DB52749735700306367 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
+		E2398DB92749860F00306367 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		E2398DBA2749860F00306367 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		E2398DBB2749860F00306367 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		E2398DBC2749860F00306367 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		E2398DC127498A1F00306367 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +149,6 @@
 				5D3219D7EAEE1EF411294FF5 /* Pods-Marvel-HeroesTests.debug.xcconfig */,
 				37D2895E05ACE0D5806C6339 /* Pods-Marvel-HeroesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -198,6 +207,7 @@
 		E2398D79274966A200306367 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				E2398DB8274985F700306367 /* DetailsView */,
 				E2398D7A274966AD00306367 /* RootView */,
 			);
 			path = "User Interface";
@@ -269,6 +279,7 @@
 			children = (
 				E2398DA127496BEF00306367 /* String+Ext.swift */,
 				E2398DA327496C1000306367 /* Optional+Ext.swift */,
+				E2398DC127498A1F00306367 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +291,17 @@
 				E2398DB52749735700306367 /* CharacterCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E2398DB8274985F700306367 /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				E2398DB92749860F00306367 /* DetailsRouter.swift */,
+				E2398DBB2749860F00306367 /* DetailsViewModel.swift */,
+				E2398DBA2749860F00306367 /* DetailsViewController.swift */,
+				E2398DBC2749860F00306367 /* DetailsViewController.xib */,
+			);
+			path = DetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +415,7 @@
 			files = (
 				E2398D562749666200306367 /* LaunchScreen.storyboard in Resources */,
 				E2398D532749666200306367 /* Assets.xcassets in Resources */,
+				E2398DC02749860F00306367 /* DetailsViewController.xib in Resources */,
 				E2398D82274966C200306367 /* RootViewController.xib in Resources */,
 				E2398DB72749735700306367 /* CharacterCell.xib in Resources */,
 			);
@@ -523,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2398DAA2749713D00306367 /* NetworkService.swift in Sources */,
+				E2398DBF2749860F00306367 /* DetailsViewModel.swift in Sources */,
 				E2398D80274966C200306367 /* RootViewController.swift in Sources */,
 				E2398DB2274971BE00306367 /* MarvelData.swift in Sources */,
 				E2398D7F274966C200306367 /* RootRouter.swift in Sources */,
@@ -533,7 +557,10 @@
 				E2398D4A2749665E00306367 /* AppDelegate.swift in Sources */,
 				E2398D81274966C200306367 /* RootViewModel.swift in Sources */,
 				E2398D4C2749665E00306367 /* SceneDelegate.swift in Sources */,
+				E2398DC227498A1F00306367 /* UIView+Ext.swift in Sources */,
+				E2398DBE2749860F00306367 /* DetailsViewController.swift in Sources */,
 				E2398DB62749735700306367 /* CharacterCell.swift in Sources */,
+				E2398DBD2749860F00306367 /* DetailsRouter.swift in Sources */,
 				E2398D8A2749693800306367 /* Constants.swift in Sources */,
 				E2398DAC2749716300306367 /* RequestAdapter.swift in Sources */,
 				E2398D9C27496ABF00306367 /* Thumbnail.swift in Sources */,

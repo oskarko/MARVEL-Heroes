@@ -55,6 +55,11 @@ class RootViewModel {
         characters[index]
     }
     
+    func didSelectRow(at indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        router?.showDetailsView(for: character)
+    }
+    
     func prefetchRows(at indexPaths: [IndexPath]) {
         if indexPaths.contains(where: isLastCell) {
             fetchCharacters(offset: characters.count)

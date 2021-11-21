@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 
+let LOGO_NAME: String = "MARVEL"
 let LOGO_WIDTH: CGFloat = 80
 let LOGO_HEIGHT: CGFloat = 44
 let CELL_HEIGHT: CGFloat = 200
