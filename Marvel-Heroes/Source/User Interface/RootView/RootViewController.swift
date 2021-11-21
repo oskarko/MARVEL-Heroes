@@ -11,6 +11,7 @@ import UIKit
 protocol RootViewControllerProtocol: AnyObject {
     func reloadData()
     func insertItems(at indexPathsToReload: [IndexPath])
+    func drawHeader(with characters: [Character])
 }
 
 class RootViewController: UIViewController {
@@ -36,13 +37,8 @@ class RootViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let Charactercount = DataBaseManager.instance.getAllCharacters().count
-        print("Character count: \(Charactercount)")
+        viewModel.checkSquad()
     }
-    
-
-    // MARK: - Selectors
-
     
     // MARK: - Helpers
 
@@ -77,6 +73,17 @@ extension RootViewController: RootViewControllerProtocol {
             self.tableView.insertRows(at: indexPathsToReload, with: .none)
         }
     }
+    
+    func drawHeader(with characters: [Character]) {
+        if !characters.isEmpty {
+            let headerView = RootHeaderView()
+            headerView.configure(with: characters)
+            headerView.delegate = self
+            tableView.setTableHeaderView(headerView: headerView)
+        } else {
+            tableView.tableHeaderView?.removeFromSuperview()
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource && UITableViewDelegate
@@ -95,7 +102,6 @@ extension RootViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.configure(with: viewModel.cellModel(at: indexPath.row))
         cell.selectionStyle = .none
-        //cell.delegate = self
         
         return cell
     }
@@ -108,7 +114,6 @@ extension RootViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         viewModel.didSelectRow(at: indexPath)
     }
-
 }
 
 // MARK: - UITableViewDataSourcePrefetching
@@ -118,5 +123,13 @@ extension RootViewController: UITableViewDataSourcePrefetching {
         // If We're in the last cell, We'll try to fetch automatically
         // the next characters in order to have an infinite scrolling effect.
         viewModel.prefetchRows(at: indexPaths)
+    }
+}
+
+// MARK: - RootHeaderViewDelegate
+
+extension RootViewController: RootHeaderViewDelegate {
+    func didSelectItem(at character: Character) {
+        viewModel.didSelect(character: character)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CharacterCell.swift
+//  SquadMemberCell.swift
 //  Marvel-Heroes
 //
 //  Created by Oscar R. Garrucho.
@@ -7,30 +7,24 @@
 //  Copyright © 2021 Oscar R. Garrucho. All rights reserved.
 //
 
-import SDWebImage
 import UIKit
 
-class CharacterCell: UITableViewCell {
+class SquadMemberCell: UICollectionViewCell {
 
-    static let identifier = "CharacterCell"
-
+    static let identifier = "SquadMemberCell"
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var characterImageView: UIImageView!
-    @IBOutlet weak var characterLabel: UILabel!
+    @IBOutlet weak var characterNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(with character: Character) {
-        characterLabel.text = character.name
+        characterNameLabel.text = character.name
+        characterImageView.layer.cornerRadius = characterImageView.frame.height / 2
         
         guard let path = character.thumbnail?.path,
               let fileExtension = character.thumbnail?.fileExtension?.description,
@@ -43,5 +37,5 @@ class CharacterCell: UITableViewCell {
 
         characterImageView.sd_setImage(with: url)
     }
-    
+
 }

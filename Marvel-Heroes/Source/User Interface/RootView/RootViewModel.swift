@@ -34,6 +34,11 @@ class RootViewModel {
         networkService.fetch(ofType: .characters(CHARACTERS_BY_PAGE, offset), onComplete: updateCharacters)
     }
     
+    func checkSquad() {
+        let allCharacters = DataBaseManager.instance.getAllCharacters()
+        view?.drawHeader(with: allCharacters)
+    }
+    
     private func updateCharacters(response: Result<MarvelData<Character>>) {
         switch response {
             case .success(let response):
@@ -66,12 +71,16 @@ class RootViewModel {
         }
     }
     
+    func didSelect(character: Character) {
+        router?.showDetailsView(for: character)
+    }
+    
+    // MARK: - Helpers
+    
     // This method helps to calculate if a cell is the last one in the tableView.
     private func isLastCell(for indexPath: IndexPath) -> Bool {
         return indexPath.row == characters.count - 1 && characters.count % CHARACTERS_BY_PAGE == 0
     }
-    
-    // MARK: - Helpers
     
     private func calculateIndexPathsToReload(from newCharacters: [Character]) -> [IndexPath] {
       let startIndex = characters.count - newCharacters.count

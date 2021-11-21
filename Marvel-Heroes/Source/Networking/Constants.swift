@@ -15,6 +15,8 @@ let LOGO_WIDTH: CGFloat = 80
 let LOGO_HEIGHT: CGFloat = 44
 let CELL_HEIGHT: CGFloat = 200
 
+let COLLECTION_VIEW_PADDING: CGFloat = 16
+
 let CHARACTERS_BY_PAGE = 40
 let BASE_URL = "https://gateway.marvel.com/v1/public/"
 let TIMESTAMP = 1

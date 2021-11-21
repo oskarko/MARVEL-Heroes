@@ -41,6 +41,11 @@
 		E241D1B7274A9868008DE75B /* CharacterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1B6274A9868008DE75B /* CharacterDAO.swift */; };
 		E241D1B9274AA01D008DE75B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1B8274AA01D008DE75B /* DataBaseManager.swift */; };
 		E241D1BB274AA3B7008DE75B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1BA274AA3B7008DE75B /* Color+Ext.swift */; };
+		E241D1BD274AA687008DE75B /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1BC274AA687008DE75B /* UITableView+Ext.swift */; };
+		E241D1C0274AA7DF008DE75B /* RootHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1BF274AA7DF008DE75B /* RootHeaderView.swift */; };
+		E241D1C2274AA859008DE75B /* RootHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E241D1C1274AA859008DE75B /* RootHeaderView.xib */; };
+		E241D1C5274AA9B1008DE75B /* SquadMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1C3274AA9B1008DE75B /* SquadMemberCell.swift */; };
+		E241D1C6274AA9B1008DE75B /* SquadMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E241D1C4274AA9B1008DE75B /* SquadMemberCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +110,11 @@
 		E241D1B6274A9868008DE75B /* CharacterDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDAO.swift; sourceTree = "<group>"; };
 		E241D1B8274AA01D008DE75B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		E241D1BA274AA3B7008DE75B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		E241D1BC274AA687008DE75B /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		E241D1BF274AA7DF008DE75B /* RootHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootHeaderView.swift; sourceTree = "<group>"; };
+		E241D1C1274AA859008DE75B /* RootHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootHeaderView.xib; sourceTree = "<group>"; };
+		E241D1C3274AA9B1008DE75B /* SquadMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquadMemberCell.swift; sourceTree = "<group>"; };
+		E241D1C4274AA9B1008DE75B /* SquadMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SquadMemberCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +232,7 @@
 		E2398D7A274966AD00306367 /* RootView */ = {
 			isa = PBXGroup;
 			children = (
+				E241D1BE274AA77C008DE75B /* Views */,
 				E2398DB32749734200306367 /* Cells */,
 				E2398D7B274966C200306367 /* RootRouter.swift */,
 				E2398D7D274966C200306367 /* RootViewModel.swift */,
@@ -284,10 +295,11 @@
 		E2398DA027496BDD00306367 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E2398DA127496BEF00306367 /* String+Ext.swift */,
-				E2398DA327496C1000306367 /* Optional+Ext.swift */,
-				E2398DC127498A1F00306367 /* UIView+Ext.swift */,
 				E241D1BA274AA3B7008DE75B /* Color+Ext.swift */,
+				E2398DA327496C1000306367 /* Optional+Ext.swift */,
+				E2398DA127496BEF00306367 /* String+Ext.swift */,
+				E241D1BC274AA687008DE75B /* UITableView+Ext.swift */,
+				E2398DC127498A1F00306367 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,6 +309,8 @@
 			children = (
 				E2398DB42749735700306367 /* CharacterCell.swift */,
 				E2398DB52749735700306367 /* CharacterCell.xib */,
+				E241D1C3274AA9B1008DE75B /* SquadMemberCell.swift */,
+				E241D1C4274AA9B1008DE75B /* SquadMemberCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -319,6 +333,15 @@
 				E241D1B6274A9868008DE75B /* CharacterDAO.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		E241D1BE274AA77C008DE75B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E241D1BF274AA7DF008DE75B /* RootHeaderView.swift */,
+				E241D1C1274AA859008DE75B /* RootHeaderView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +457,9 @@
 				E2398D532749666200306367 /* Assets.xcassets in Resources */,
 				E2398DC02749860F00306367 /* DetailsViewController.xib in Resources */,
 				E2398D82274966C200306367 /* RootViewController.xib in Resources */,
+				E241D1C6274AA9B1008DE75B /* SquadMemberCell.xib in Resources */,
 				E2398DB72749735700306367 /* CharacterCell.xib in Resources */,
+				E241D1C2274AA859008DE75B /* RootHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,16 +598,19 @@
 				E2398DB02749719200306367 /* Request.swift in Sources */,
 				E2398DA427496C1000306367 /* Optional+Ext.swift in Sources */,
 				E241D1B9274AA01D008DE75B /* DataBaseManager.swift in Sources */,
+				E241D1C0274AA7DF008DE75B /* RootHeaderView.swift in Sources */,
 				E2398D4A2749665E00306367 /* AppDelegate.swift in Sources */,
 				E2398D81274966C200306367 /* RootViewModel.swift in Sources */,
 				E2398D4C2749665E00306367 /* SceneDelegate.swift in Sources */,
 				E2398DC227498A1F00306367 /* UIView+Ext.swift in Sources */,
+				E241D1C5274AA9B1008DE75B /* SquadMemberCell.swift in Sources */,
 				E2398DBE2749860F00306367 /* DetailsViewController.swift in Sources */,
 				E2398DB62749735700306367 /* CharacterCell.swift in Sources */,
 				E2398DBD2749860F00306367 /* DetailsRouter.swift in Sources */,
 				E2398D8A2749693800306367 /* Constants.swift in Sources */,
 				E241D1BB274AA3B7008DE75B /* Color+Ext.swift in Sources */,
 				E2398DAC2749716300306367 /* RequestAdapter.swift in Sources */,
+				E241D1BD274AA687008DE75B /* UITableView+Ext.swift in Sources */,
 				E2398D9C27496ABF00306367 /* Thumbnail.swift in Sources */,
 				E2398D9A27496AA700306367 /* Character.swift in Sources */,
 			);
