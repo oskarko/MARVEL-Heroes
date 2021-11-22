@@ -4,9 +4,17 @@ Technical test for PLUM company
 # Documentation:
 - I have selected MVVM + Coordinator pattern because it's easier to test all the logic related to the App. Also, you have a total control of all classes in order to preserve that each class has just one thing to do.
 - Calling to the API has been made without any third library. In my opinion it is not necessary nowadays at all.
-- I have use Generics type for the Network layer because if you want to fetch comics from the API, just need to create the Comic model and pass it to the Network layer. The calls are there 😉
+- I have used Generics type for the Network layer because if you want to fetch comics from the API, just need to create the Comic model and pass it to the Network layer. The calls are there 😉
 - Using Coordinators as a pattern for views transictions make really EASY our live and clean our code a lot. This MVVM + Coordinator is like a pseudo VIPER but with less boilerplate code.
 - Just for lack of time, I did NOT add any other extra feature: SearchBar, localized strings...
+
+
+Screenshots:
+
+![alt tag1](images/image-01.png)
+![alt tag2](images/image-02.png)
+![alt tag3](images/image-03.png)
+![alt tag4](images/image-04.png)
 
 Visit my blog for more info: [www.oscargarrucho.com](http://www.oscargarrucho.com/)
 
