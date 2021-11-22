@@ -43,7 +43,7 @@
     </objects>
     <resources>
         <namedColor name="MarvelBackground">
-            <color red="0.13333333333333333" green="0.14509803921568629" blue="0.16862745098039217" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13333333333333333" green="0.14509803921568629" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -49,11 +49,11 @@ class RootViewModel {
             case .success(let response):
                 let newCharacters = response.data.items
                 if offset > 0 {
-                    self.characters.append(contentsOf: newCharacters)
+                    characters.append(contentsOf: newCharacters)
                     let indexPathsToRelod = calculateIndexPathsToReload(from: newCharacters)
                     view?.insertItems(at: indexPathsToRelod)
                 } else {
-                    self.characters = newCharacters
+                    characters = newCharacters
                     view?.reloadData()
                 }
             case .fail(let error):
