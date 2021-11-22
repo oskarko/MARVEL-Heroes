@@ -13,7 +13,7 @@ protocol NetworkProtocol {
     func fetch<T: Decodable>(ofType: Request, onComplete: @escaping (Result<T>) -> Void)
 }
 
-struct NetworkService: NetworkProtocol {
+class NetworkService: NetworkProtocol {
 
     var hash: String {
         let combined = "\(TIMESTAMP)\(PRIVATE_KEY)\(PUBLIC_KEY)"

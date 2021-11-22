@@ -38,6 +38,9 @@
 		E2398DBF2749860F00306367 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DBB2749860F00306367 /* DetailsViewModel.swift */; };
 		E2398DC02749860F00306367 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2398DBC2749860F00306367 /* DetailsViewController.xib */; };
 		E2398DC227498A1F00306367 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2398DC127498A1F00306367 /* UIView+Ext.swift */; };
+		E23B9BA7274B6125007C52BA /* MockDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9BA6274B6125007C52BA /* MockDataBaseManager.swift */; };
+		E23B9BA9274B669C007C52BA /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9BA8274B669C007C52BA /* DetailsViewModelTests.swift */; };
+		E23B9BAB274B6A9F007C52BA /* MockDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23B9BAA274B6A9F007C52BA /* MockDetailsView.swift */; };
 		E241D1B7274A9868008DE75B /* CharacterDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1B6274A9868008DE75B /* CharacterDAO.swift */; };
 		E241D1B9274AA01D008DE75B /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1B8274AA01D008DE75B /* DataBaseManager.swift */; };
 		E241D1BB274AA3B7008DE75B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241D1BA274AA3B7008DE75B /* Color+Ext.swift */; };
@@ -110,6 +113,9 @@
 		E2398DBB2749860F00306367 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		E2398DBC2749860F00306367 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		E2398DC127498A1F00306367 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		E23B9BA6274B6125007C52BA /* MockDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataBaseManager.swift; sourceTree = "<group>"; };
+		E23B9BA8274B669C007C52BA /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		E23B9BAA274B6A9F007C52BA /* MockDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDetailsView.swift; sourceTree = "<group>"; };
 		E241D1B6274A9868008DE75B /* CharacterDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDAO.swift; sourceTree = "<group>"; };
 		E241D1B8274AA01D008DE75B /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		E241D1BA274AA3B7008DE75B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 				E241D1CB274AB5AB008DE75B /* Mocks */,
 				E2398D602749666200306367 /* Marvel_HeroesTests.swift */,
 				E241D1C9274AB588008DE75B /* RootViewModelTests.swift */,
+				E23B9BA8274B669C007C52BA /* DetailsViewModelTests.swift */,
 			);
 			path = "Marvel-HeroesTests";
 			sourceTree = "<group>";
@@ -372,7 +379,9 @@
 			isa = PBXGroup;
 			children = (
 				E241D1CC274AB6D8008DE75B /* MockRootView.swift */,
+				E23B9BAA274B6A9F007C52BA /* MockDetailsView.swift */,
 				E241D1CE274AB6E3008DE75B /* mockNetworkService.swift */,
+				E23B9BA6274B6125007C52BA /* MockDataBaseManager.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -656,6 +665,9 @@
 				E241D1CF274AB6E3008DE75B /* mockNetworkService.swift in Sources */,
 				E241D1CA274AB588008DE75B /* RootViewModelTests.swift in Sources */,
 				E241D1CD274AB6D8008DE75B /* MockRootView.swift in Sources */,
+				E23B9BAB274B6A9F007C52BA /* MockDetailsView.swift in Sources */,
+				E23B9BA9274B669C007C52BA /* DetailsViewModelTests.swift in Sources */,
+				E23B9BA7274B6125007C52BA /* MockDataBaseManager.swift in Sources */,
 				E2398D612749666200306367 /* Marvel_HeroesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

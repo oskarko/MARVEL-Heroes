@@ -58,6 +58,7 @@ class DetailsViewController: UIViewController {
         if let urlString = viewModel.getCharacterImageUrlString() {
             characterImageView.sd_setImage(with: URL(string: urlString))
         } else  {
+            // Default UIImage if the API does NOT provide anyone.
             characterImageView.image = UIImage(named: "imageNotAvailable")
         }
     }
@@ -67,6 +68,7 @@ class DetailsViewController: UIViewController {
 // MARK: - DetailsViewControllerProtocol
 
 extension DetailsViewController: DetailsViewControllerProtocol {
+    // Setup the recruitButton UI depending on the character status
     func updateUI(characterStatus: CharacterStatus) {
         recruitButton.setTitle(viewModel.getRecruitButtonTitle(), for: .normal)
         recruitButton.backgroundColor = characterStatus == .free ? .marvelRedLight : .marvelBackground

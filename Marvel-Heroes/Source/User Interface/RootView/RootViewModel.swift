@@ -15,6 +15,7 @@ class RootViewModel {
     weak var view: RootViewControllerProtocol?
     var router: RootRouter?
     private var networkService: NetworkProtocol
+    private var dataBaseManager: DataBaseProtocol
     private var characters: [Character] = []
     private var offset: Int = 0
     
@@ -25,8 +26,12 @@ class RootViewModel {
     
     // MARK: - Lifecycle
     
-    init(_ networkService: NetworkProtocol = NetworkService()) {
+    init(
+        _ networkService: NetworkProtocol = NetworkService(),
+        dataBaseManager: DataBaseProtocol = DataBaseManager()
+    ) {
         self.networkService = networkService
+        self.dataBaseManager = dataBaseManager
     }
     
     func fetchCharacters(offset: Int) {
@@ -35,7 +40,7 @@ class RootViewModel {
     }
     
     func checkSquad() {
-        let allCharacters = DataBaseManager.instance.getAllCharacters()
+        let allCharacters = dataBaseManager.getAllCharacters()
         view?.drawHeader(with: allCharacters)
     }
     
@@ -52,6 +57,7 @@ class RootViewModel {
                     view?.reloadData()
                 }
             case .fail(let error):
+                // We should show some error here to the user...
                 print("DEBUG: Something went wrong. Error: \(error.localizedDescription)")
         }
     }

@@ -15,11 +15,16 @@ class DetailsViewModel {
     weak var view: DetailsViewControllerProtocol?
     var router: DetailsRouter?
     private var character: Character
+    private var dataBaseManager: DataBaseProtocol
     
     // MARK: - Lifecycle
     
-    init(_ character: Character) {
+    init(
+        _ character: Character,
+        dataBaseManager: DataBaseProtocol = DataBaseManager()
+    ) {
         self.character = character
+        self.dataBaseManager = dataBaseManager
     }
     
     // MARK: - Helpers
@@ -45,18 +50,18 @@ class DetailsViewModel {
     }
     
     func getRecruitButtonTitle() -> String? {
-        DataBaseManager.instance.existsCharacter(by: character.id) ? "🔥  Fire from Squad" : "💪  Recruit to Squad"
+        dataBaseManager.existsCharacter(by: character.id) ? "🔥  Fire from Squad" : "💪  Recruit to Squad" // 🚧 This text should be localized.
     }
     
     func getCharacterStatus() -> CharacterStatus {
-        DataBaseManager.instance.existsCharacter(by: character.id) ? .hired : .free
+        dataBaseManager.existsCharacter(by: character.id) ? .hired : .free
     }
     
     func recruitButtonTapped() {
-        if DataBaseManager.instance.existsCharacter(by: character.id) {
-            DataBaseManager.instance.deleteCharacter(by: character.id)
+        if dataBaseManager.existsCharacter(by: character.id) {
+            dataBaseManager.deleteCharacter(by: character.id)
         } else {
-            DataBaseManager.instance.addCharacter(character)
+            dataBaseManager.addCharacter(character)
         }
 
         view?.updateUI(characterStatus: getCharacterStatus())

@@ -43,7 +43,7 @@ class RootHeaderView: UIView {
         addSubview(containerView)
         containerView.frame = self.bounds
         containerView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        titleLabel.text = "My Squad"
+        titleLabel.text = "My Squad" // 🚧 This text should be localized.
         
         collectionView.register(UINib(nibName: SquadMemberCell.identifier, bundle: nil),
                                 forCellWithReuseIdentifier: SquadMemberCell.identifier)

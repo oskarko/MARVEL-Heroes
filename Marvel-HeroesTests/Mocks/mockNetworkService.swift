@@ -10,7 +10,7 @@
 @testable import Marvel_Heroes
 import Foundation
 
-struct MockNetworkService: NetworkProtocol {
+class MockNetworkService: NetworkProtocol {
     
     var characters = [Character]()
     var mockSuccess = true

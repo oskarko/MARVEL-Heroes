@@ -10,9 +10,14 @@
 import Foundation
 import SQLite
 
-class DataBaseManager {
-    
-    static let instance = DataBaseManager()
+protocol DataBaseProtocol {
+    func addCharacter(_ character: Character)
+    func existsCharacter(by ID: Int) -> Bool
+    func getAllCharacters() -> [Character]
+    func deleteCharacter(by ID: Int)
+}
+
+class DataBaseManager: DataBaseProtocol {
     
     func addCharacter(_ character: Character) {
         CharacterDAO.instance.addCharacter(character)
