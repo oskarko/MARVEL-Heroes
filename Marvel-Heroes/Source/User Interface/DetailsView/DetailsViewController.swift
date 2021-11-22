@@ -21,6 +21,8 @@ class DetailsViewController: UIViewController {
     
     // MARK: - Properties
     
+    static let statusBarAlpha: CGFloat = 0.3
+    
     var viewModel: DetailsViewModel!
     
     @IBOutlet weak var characterImageView: UIImageView!
@@ -50,7 +52,8 @@ class DetailsViewController: UIViewController {
     // MARK: - Helpers
 
     private func configureUI() {
-        navigationController?.navigationBar.topItem?.backButtonTitle = ""
+        setupStatusBar()
+        setupNavigationController()
         
         characterNameLabel.text = viewModel.getCharacterName()
         characterHistoryLabel.text = viewModel.getCharacterHistory()
@@ -61,6 +64,18 @@ class DetailsViewController: UIViewController {
             // Default UIImage if the API does NOT provide anyone.
             characterImageView.image = UIImage(named: "imageNotAvailable")
         }
+    }
+    
+    private func setupStatusBar() {
+        let height = UIApplication.shared.windows.first?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        let statusBarView = UIView(frame: CGRect(x: .zero, y: .zero, width: view.frame.size.width, height: height))
+        statusBarView.backgroundColor = .black
+        statusBarView.alpha = Self.statusBarAlpha
+        view.addSubview(statusBarView)
+    }
+    
+    private func setupNavigationController() {
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
     }
     
 }
