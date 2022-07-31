@@ -32,6 +32,7 @@ class DetailsViewModel {
     
     // MARK: - Helpers
     
+    // 👇 This call is unnecessary because we fetch the same character as in HomeView 👇
     func fetchCharacter() {
         let model = DetailsRequestModel(ID: "\(character.id)")
         service.fetch(DetailsRequest.character(model)) { [weak self] result in
