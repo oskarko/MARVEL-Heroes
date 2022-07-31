@@ -1,4 +1,4 @@
-//  DetailsRouter.swift
+//  HomeRouter.swift
 //  Marvel-Heroes
 //
 //  Created by Oscar R. Garrucho.
@@ -6,26 +6,27 @@
 //  Copyright © 2021 Oscar R. Garrucho. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class DetailsRouter {
+class HomeRouter {
     
     // MARK: - Properties
     
-    weak var viewController: DetailsViewController?
+    weak var viewController: HomeViewController?
 
     // MARK: - Helpers
     
-    static func getViewController(for character: Character) -> DetailsViewController {
-        let configuration = configureModule(for: character)
+    static func getViewController() -> UINavigationController {
+        let configuration = configureModule()
+        let nav = UINavigationController(rootViewController: configuration.vc)
 
-        return configuration.vc
+        return nav
     }
     
-    private static func configureModule(for character: Character) -> (vc: DetailsViewController, vm: DetailsViewModel, rt: DetailsRouter) {
-        let viewController = DetailsViewController()
-        let router = DetailsRouter()
-        let viewModel = DetailsViewModel(character)
+    private static func configureModule() -> (vc: HomeViewController, vm: HomeViewModel, rt: HomeRouter) {
+        let viewController = HomeViewController()
+        let router = HomeRouter()
+        let viewModel = HomeViewModel()
 
         viewController.viewModel = viewModel
 
@@ -39,6 +40,11 @@ class DetailsRouter {
     
     // MARK: - Routes
     
+    func showDetailsView(for character: Character) {
+        let detailsView = DetailsRouter.getViewController(for: character)
+        viewController?.navigationController?.pushViewController(detailsView, animated: true)
+    }
+    
     func showAlert(error: APIErrorResponse) {
         DispatchQueue.main.async {
             let alertView = AlertRouter.getViewController(error: error)
@@ -46,5 +52,4 @@ class DetailsRouter {
             self.viewController?.present(alertView, animated: false)
         }
     }
-    
 }

@@ -14,6 +14,7 @@ enum CharacterStatus: Int {
 }
 
 protocol DetailsViewControllerProtocol: AnyObject {
+    func dismissActivityIndicator()
     func updateUI(characterStatus: CharacterStatus)
 }
 
@@ -29,6 +30,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var recruitButton: UIButton!
     @IBOutlet weak var characterHistoryLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
 
@@ -36,7 +38,8 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        updateUI(characterStatus: viewModel.getCharacterStatus())
+        
+        viewModel.fetchCharacter()
     }
     
     override func viewWillLayoutSubviews() {
@@ -54,16 +57,7 @@ class DetailsViewController: UIViewController {
     private func configureUI() {
         setupStatusBar()
         setupNavigationController()
-        
-        characterNameLabel.text = viewModel.getCharacterName()
-        characterHistoryLabel.text = viewModel.getCharacterHistory()
-        
-        if let urlString = viewModel.getCharacterImageUrlString() {
-            characterImageView.sd_setImage(with: URL(string: urlString))
-        } else  {
-            // Default UIImage if the API does NOT provide anyone.
-            characterImageView.image = UIImage(named: "imageNotAvailable")
-        }
+        activityIndicator.startAnimating()
     }
     
     private func setupStatusBar() {
@@ -83,11 +77,33 @@ class DetailsViewController: UIViewController {
 // MARK: - DetailsViewControllerProtocol
 
 extension DetailsViewController: DetailsViewControllerProtocol {
+    
+    func dismissActivityIndicator() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAndHide()
+        }
+    }
+    
     // Setup the recruitButton UI depending on the character status
     func updateUI(characterStatus: CharacterStatus) {
-        recruitButton.setTitle(viewModel.getRecruitButtonTitle(), for: .normal)
-        recruitButton.backgroundColor = characterStatus == .free ? .marvelRedLight : .marvelBackground
-        recruitButton.layer.borderWidth = characterStatus == .free ? 0 : 2
-        recruitButton.layer.borderColor = characterStatus == .free ? UIColor.marvelBackground?.cgColor : UIColor.marvelRedLight?.cgColor
+        DispatchQueue.main.async {
+            [self.characterNameLabel, self.recruitButton, self.characterHistoryLabel].forEach {
+                $0?.isHidden = false
+            }
+            self.recruitButton.setTitle(self.viewModel.getRecruitButtonTitle(), for: .normal)
+            self.recruitButton.backgroundColor = characterStatus == .free ? .marvelRedLight : .marvelBackground
+            self.recruitButton.layer.borderWidth = characterStatus == .free ? 0 : 2
+            self.recruitButton.layer.borderColor = characterStatus == .free ? UIColor.marvelBackground?.cgColor : UIColor.marvelRedLight?.cgColor
+            
+            self.characterNameLabel.text = self.viewModel.getCharacterName()
+            self.characterHistoryLabel.text = self.viewModel.getCharacterHistory()
+            
+            if let urlString = self.viewModel.getCharacterImageUrlString() {
+                self.characterImageView.sd_setImage(with: URL(string: urlString))
+            } else  {
+                // Default UIImage if the API does NOT provide anyone.
+                self.characterImageView.image = UIImage(named: "imageNotAvailable")
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="Marvel_Heroes" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="ef8-2S-vaG" id="Xzb-5x-NpB"/>
                 <outlet property="characterHistoryLabel" destination="kOj-z8-sQ6" id="NPh-Gx-JZP"/>
                 <outlet property="characterImageView" destination="VbM-j1-n2g" id="HWQ-KX-nib"/>
                 <outlet property="characterNameLabel" destination="agq-b4-0T7" id="eXg-4J-e5F"/>
@@ -29,7 +30,7 @@
                         <constraint firstAttribute="width" secondItem="VbM-j1-n2g" secondAttribute="height" multiplier="1:1" id="C0G-xi-mmh"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agq-b4-0T7">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agq-b4-0T7">
                     <rect key="frame" x="16" y="438" width="382" height="41"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="ECP-H9-6l3"/>
@@ -38,7 +39,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ao9-kx-ZIJ">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ao9-kx-ZIJ">
                     <rect key="frame" x="16" y="495" width="382" height="48"/>
                     <color key="backgroundColor" name="MarvelRedLight"/>
                     <constraints>
@@ -46,7 +47,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Button">
+                    <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -58,12 +59,20 @@
                         <action selector="recruitButtonTapped:" destination="-1" eventType="touchUpInside" id="rej-xz-Ycg"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kOj-z8-sQ6">
-                    <rect key="frame" x="16" y="559" width="382" height="20.5"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kOj-z8-sQ6">
+                    <rect key="frame" x="16" y="559" width="382" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-2S-vaG">
+                    <rect key="frame" x="183" y="429" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="43t-wX-Wjx"/>
+                        <constraint firstAttribute="width" constant="48" id="i9G-pe-xKT"/>
+                    </constraints>
+                    <color key="color" name="AccentColor"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MarvelBackground"/>
@@ -73,12 +82,14 @@
                 <constraint firstItem="ao9-kx-ZIJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="DAJ-8K-HmO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="agq-b4-0T7" secondAttribute="trailing" constant="16" id="PpM-xK-oKn"/>
                 <constraint firstItem="VbM-j1-n2g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SDS-1d-qxu"/>
+                <constraint firstItem="ef8-2S-vaG" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Ynk-s5-Tqt"/>
                 <constraint firstItem="ao9-kx-ZIJ" firstAttribute="top" secondItem="agq-b4-0T7" secondAttribute="bottom" constant="16" id="Z5h-cn-Nrs"/>
                 <constraint firstItem="kOj-z8-sQ6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ZkU-uD-Azu"/>
                 <constraint firstItem="agq-b4-0T7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d2I-6I-znh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ao9-kx-ZIJ" secondAttribute="trailing" constant="16" id="gEg-pe-tD9"/>
                 <constraint firstItem="VbM-j1-n2g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jEw-iu-oCj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="kOj-z8-sQ6" secondAttribute="bottom" id="ja2-gE-gXY"/>
+                <constraint firstItem="ef8-2S-vaG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wov-Lo-Jky"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kOj-z8-sQ6" secondAttribute="trailing" constant="16" id="xOP-l1-Wkq"/>
                 <constraint firstItem="agq-b4-0T7" firstAttribute="top" secondItem="VbM-j1-n2g" secondAttribute="bottom" constant="24" id="zBj-a6-ICc"/>
             </constraints>
@@ -86,8 +97,11 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MarvelBackground">
-            <color red="0.13333333333333333" green="0.14509803921568629" blue="0.16862745098039217" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13333333333333333" green="0.14509803921568629" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MarvelRedLight">
             <color red="0.95294117647058818" green="0.047058823529411764" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
