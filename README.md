@@ -1,5 +1,5 @@
 # MARVEL-Heroes
-Technical test for PLUM company
+Technical test for the PLUM / Pleexus companies
 
 # Documentation:
 - I have selected MVVM + Coordinator pattern because it's easier to test all the logic related to the App. Also, you have a total control of all classes in order to preserve that each class has just one thing to do.
