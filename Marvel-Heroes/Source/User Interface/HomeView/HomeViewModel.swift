@@ -54,8 +54,11 @@ class HomeViewModel {
     }
     
     func checkSquad() {
-        let allCharacters = dataBaseManager.getAllCharacters()
-        view?.drawHeader(with: allCharacters)
+        view?.drawHeader()
+    }
+    
+    func headerModel() -> [Character] {
+        dataBaseManager.getAllCharacters()
     }
     
     private func updateCharacters(_ newCharacters: [Character]) {
@@ -84,8 +87,12 @@ class HomeViewModel {
         }
     }
     
-    func didSelect(character: Character) {
-        router?.showDetailsView(for: character)
+    func didSelect(characterId: Int) {
+        if let character = dataBaseManager.getAllCharacters().filter({
+            $0.id == characterId
+        }).first {
+            router?.showDetailsView(for: character)
+        }
     }
     
     // MARK: - Helpers

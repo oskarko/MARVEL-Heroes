@@ -18,24 +18,22 @@ class HomeRouter {
     
     static func getViewController() -> UINavigationController {
         let configuration = configureModule()
-        let nav = UINavigationController(rootViewController: configuration.vc)
+        let nav = UINavigationController(rootViewController: configuration.viewController)
 
         return nav
     }
     
-    private static func configureModule() -> (vc: HomeViewController, vm: HomeViewModel, rt: HomeRouter) {
-        let viewController = HomeViewController()
+    private static func configureModule() -> HomeData {
         let router = HomeRouter()
         let viewModel = HomeViewModel()
-
-        viewController.viewModel = viewModel
+        let viewController = HomeViewController(viewModel)
 
         viewModel.router = router
         viewModel.view = viewController
 
         router.viewController = viewController
 
-        return (viewController, viewModel, router)
+        return HomeData(viewController: viewController, viewModel: viewModel, router: router)
     }
     
     // MARK: - Routes
@@ -52,4 +50,10 @@ class HomeRouter {
             self.viewController?.present(alertView, animated: false)
         }
     }
+}
+
+struct HomeData {
+    let viewController: HomeViewController
+    let viewModel: HomeViewModel
+    let router: HomeRouter
 }

@@ -12,19 +12,28 @@ protocol HomeViewControllerProtocol: AnyObject {
     func dismissActivityIndicator()
     func reloadData()
     func insertItems(at indexPathsToReload: [IndexPath])
-    func drawHeader(with characters: [Character])
+    func drawHeader()
 }
 
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
-    var viewModel: HomeViewModel!
+    var viewModel: HomeViewModel
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
+    
+    init(_ viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +92,12 @@ extension HomeViewController: HomeViewControllerProtocol {
         }
     }
     
-    func drawHeader(with characters: [Character]) {
+    func drawHeader() {
         var headerView: RootHeaderView?
         
-        if !characters.isEmpty {
+        if !viewModel.headerModel().isEmpty {
             headerView = RootHeaderView()
-            headerView?.configure(with: characters)
+            headerView?.configure(with: viewModel.headerModel())
             headerView?.delegate = self
         }
         tableView.setTableHeaderView(headerView: headerView)
@@ -139,7 +148,7 @@ extension HomeViewController: UITableViewDataSourcePrefetching {
 // MARK: - RootHeaderViewDelegate
 
 extension HomeViewController: RootHeaderViewDelegate {
-    func didSelectItem(at character: Character) {
-        viewModel.didSelect(character: character)
+    func didSelectItem(at characterId: Int) {
+        viewModel.didSelect(characterId: characterId)
     }
 }

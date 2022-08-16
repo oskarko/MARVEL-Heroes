@@ -19,22 +19,20 @@ class DetailsRouter {
     static func getViewController(for character: Character) -> DetailsViewController {
         let configuration = configureModule(for: character)
 
-        return configuration.vc
+        return configuration.viewController
     }
     
-    private static func configureModule(for character: Character) -> (vc: DetailsViewController, vm: DetailsViewModel, rt: DetailsRouter) {
-        let viewController = DetailsViewController()
+    private static func configureModule(for character: Character) -> DetailsData {
         let router = DetailsRouter()
         let viewModel = DetailsViewModel(character)
-
-        viewController.viewModel = viewModel
+        let viewController = DetailsViewController(viewModel)
 
         viewModel.router = router
         viewModel.view = viewController
 
         router.viewController = viewController
 
-        return (viewController, viewModel, router)
+        return DetailsData(viewController: viewController, viewModel: viewModel, router: router)
     }
     
     // MARK: - Routes
@@ -46,5 +44,10 @@ class DetailsRouter {
             self.viewController?.present(alertView, animated: false)
         }
     }
-    
+}
+
+struct DetailsData {
+    let viewController: DetailsViewController
+    let viewModel: DetailsViewModel
+    let router: DetailsRouter
 }

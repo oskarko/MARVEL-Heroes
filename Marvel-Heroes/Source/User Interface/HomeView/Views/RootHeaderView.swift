@@ -10,7 +10,7 @@
 import UIKit
 
 protocol RootHeaderViewDelegate: AnyObject {
-    func didSelectItem(at character: Character)
+    func didSelectItem(at characterId: Int)
 }
 
 class RootHeaderView: UIView {
@@ -87,7 +87,7 @@ extension RootHeaderView: UICollectionViewDataSource, UICollectionViewDelegate, 
         guard let characters = characters else { return }
         
         let character = characters[indexPath.row]
-        delegate?.didSelectItem(at: character)
+        delegate?.didSelectItem(at: character.id)
     }
 
     func collectionView(_ collectionView: UICollectionView,

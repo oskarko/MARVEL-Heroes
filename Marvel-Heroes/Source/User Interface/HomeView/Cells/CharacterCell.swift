@@ -19,7 +19,9 @@ class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterLabel: UILabel!
     
-    func configure(with character: Character) {
+    func configure(with character: Character?) {
+        guard let character = character else { return }
+
         characterLabel.text = character.name
         
         guard let path = character.thumbnail?.path,
